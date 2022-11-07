@@ -5,22 +5,27 @@ package defaults
 
 // Sane defaults for the Windows platform. The "default" options may be
 // may be replaced by the running configuration.
-func GetDefaults() platformDefaultParameters {
+func getDefaults() platformDefaultParameters {
 	return platformDefaultParameters{
 		// Admin
 		DefaultAdminListen: "tcp://localhost:9001",
 
-		// Configuration (used for yggdrasilctl)
-		DefaultConfigFile: "C:\\Program Files\\Yggdrasil\\yggdrasil.conf",
+		// Configuration (used for meshctl)
+		DefaultConfigFile: "C:\\Program Files\\RiV-mesh\\mesh.conf",
 
 		// Multicast interfaces
 		DefaultMulticastInterfaces: []MulticastInterfaceConfig{
 			{Regex: ".*", Beacon: true, Listen: true},
 		},
 
-		// TUN/TAP
+                // Network domain
+                DefaultNetworkDomain: NetworkDomainConfig{
+                        Prefix: [...]byte{0xfc},
+                },
+
+		// TUN
 		MaximumIfMTU:  65535,
 		DefaultIfMTU:  65535,
-		DefaultIfName: "Yggdrasil",
+		DefaultIfName: "RiV-mesh",
 	}
 }

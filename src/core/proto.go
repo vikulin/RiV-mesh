@@ -12,7 +12,7 @@ import (
 	iwt "github.com/Arceliar/ironwood/types"
 	"github.com/Arceliar/phony"
 
-	"github.com/yggdrasil-network/yggdrasil-go/src/address"
+	//"github.com/RiV-chain/RiV-mesh/src/address"
 )
 
 const (
@@ -65,8 +65,14 @@ func (p *protoHandler) handleProto(from phony.Actor, key keyArray, bs []byte) {
 	case typeProtoNodeInfoResponse:
 		p.nodeinfo.handleRes(p, key, bs[1:])
 	case typeProtoDebug:
-		p._handleDebug(key, bs[1:])
+		p.handleDebug(from, key, bs[1:])
 	}
+}
+
+func (p *protoHandler) handleDebug(from phony.Actor, key keyArray, bs []byte) {
+	p.Act(from, func() {
+		p._handleDebug(key, bs)
+	})
 }
 
 func (p *protoHandler) _handleDebug(key keyArray, bs []byte) {
@@ -260,7 +266,7 @@ func (p *protoHandler) getSelfHandler(in json.RawMessage) (interface{}, error) {
 		if err := msg.UnmarshalJSON(info); err != nil {
 			return nil, err
 		}
-		ip := net.IP(address.AddrForKey(kbs)[:])
+		ip := net.IP(p.core.AddrForKey(kbs)[:])
 		res := DebugGetSelfResponse{ip.String(): msg}
 		return res, nil
 	}
@@ -310,7 +316,7 @@ func (p *protoHandler) getPeersHandler(in json.RawMessage) (interface{}, error) 
 		if err := msg.UnmarshalJSON(js); err != nil {
 			return nil, err
 		}
-		ip := net.IP(address.AddrForKey(kbs)[:])
+		ip := net.IP(p.core.AddrForKey(kbs)[:])
 		res := DebugGetPeersResponse{ip.String(): msg}
 		return res, nil
 	}
@@ -360,7 +366,7 @@ func (p *protoHandler) getDHTHandler(in json.RawMessage) (interface{}, error) {
 		if err := msg.UnmarshalJSON(js); err != nil {
 			return nil, err
 		}
-		ip := net.IP(address.AddrForKey(kbs)[:])
+		ip := net.IP(p.core.AddrForKey(kbs)[:])
 		res := DebugGetDHTResponse{ip.String(): msg}
 		return res, nil
 	}
