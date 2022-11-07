@@ -1,4 +1,4 @@
-# RiV-mesh first self arranging mesh network with link aggregation.
+# RiV-mesh, first self arranging mesh network with link aggregation.
 
 [![CircleCI](https://circleci.com/gh/RiV-chain/RiV-mesh.svg?style=shield&circle-token=:circle-token
 )](https://circleci.com/gh/RiV-chain/RiV-mesh)
