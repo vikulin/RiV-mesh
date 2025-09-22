@@ -1,15 +1,39 @@
-# RiV-mesh first self arranging mesh network with link aggregation.
+# RiV-mesh - Decentralized IPv6 Mesh Network
 
 ## Introduction
 
-RiV-mesh is an implementation of a fully end-to-end encrypted IPv6
-network, created in the scope to produce the Transport Layer for RiV Chain Blockchain,
-also to facilitate secure conectivity between a wide spectrum of endpoint devices like IoT devices,
+RiV-mesh is the legacy implementation of a fully end-to-end encrypted IPv6
+mesh network, designed to provide secure connectivity between a wide spectrum of endpoint devices like IoT devices,
 desktop computers or even routers.
 It is lightweight, self-arranging, supported on multiple
 platforms and allows pretty much any IPv6-capable application
-to communicate securely with other RiV-mesh nodes.
-RiV-mesh does not require you to have IPv6 Internet connectivity - it also works over IPv4.
+to communicate securely with other network nodes.
+
+**Note**: RiV-mesh is now maintained for legacy compatibility. For new deployments, we recommend using [v6Space™](https://github.com/RiV-chain/v6Space) - the next-generation mesh networking platform with enhanced features, modern architecture, agentic capabilities, and MCP (Model Context Protocol) tools for AI agent communication and autonomous operations.
+
+## Relationship to v6Space™
+
+RiV-mesh is the **legacy version** of the mesh networking technology that has evolved into **v6Space™**:
+
+### RiV-mesh (Legacy)
+- **Status**: Legacy maintenance mode
+- **License**: LGPLv3 only
+- **Features**: Core mesh networking functionality
+- **Use Case**: Existing deployments, compatibility
+
+### v6Space™ (Current)
+- **Status**: Active development
+- **License**: Dual-license (LGPLv3 + CC BY-NC 4.0)
+- **Features**: Enhanced mesh networking + modern UI + MCP support + agentic capabilities
+- **Agentic Features**: AI agent communication, autonomous operations, Web3 integration
+- **MCP Tools**: Model Context Protocol integration for AI model communication
+- **Use Case**: New deployments, modern applications, AI agent networks, Web3 infrastructure
+
+**Migration**: RiV-mesh configurations are compatible with v6Space™. Simply replace the binary and continue using your existing `mesh.conf` files.
+
+## Core Functionality
+
+RiV-mesh provides the decentralized IPv6 mesh overlay network infrastructure for applications like CupLink™, which requires a VPN service to establish the mesh network environment for peer-to-peer communication.
 
 ## Supported Platforms
 
@@ -25,7 +49,7 @@ or tools in the `contrib` folder.
 If you want to build from source, as opposed to installing one of the pre-built
 packages:
 
-1. Install [Go](https://golang.org) (requires Go 1.18 or later)
+1. Install [Go](https://golang.org) (requires Go 1.19 or later)
 2. Clone this repository
 2. Run `./build`
 
@@ -100,13 +124,21 @@ Documentation is available [on our website](https://riv-chain.github.io/RiV-mesh
 
 <img width="253" alt="DDNS" src="https://github.com/RiV-chain/RiV-mesh/assets/743622/05757b9f-2053-4503-9037-24e5ff992554">
 
-## Community
+## Company Information
 
-Feel free to join us on our [Telegram
-channel](https://t.me/rivchain).
+**RiV-mesh** is developed by **RiV Chain™ Limited**, an Ireland-based FinTech and infrastructure R&D company focused on decentralized networking and agentic systems.
+
+- **Company**: RiV Chain™ Limited
+- **Location**: Ireland
+- **Focus**: Decentralized mesh networking, AI agent coordination, distributed identity, Web3 infrastructure
+- **Specialization**: Agentic Web technologies, MCP tools, autonomous AI agent communication
+- **Website**: [rivchain.org](https://rivchain.org)
+- **Contact**: For technical support and licensing inquiries
+
+
 
 ## Public peers
-If you are operating RiV-mesh peer and may create your pool request with your new per or use existing one https://github.com/RiV-chain/public-peers
+If you are operating a RiV-mesh peer, you may create your pull request with your new peer or use existing ones: https://github.com/RiV-chain/public-peers
 
 ## Known issues
 
@@ -141,9 +173,22 @@ Docker interface docker0 is conflicting with SCTP bind process. The issue can be
 
 ## License
 
-This code is released under the terms of the LGPLv3, but with an added exception
-that was shamelessly taken from [godeb](https://github.com/niemeyer/godeb).
-Under certain circumstances, this exception permits distribution of binaries
-that are (statically or dynamically) linked with this code, without requiring
-the distribution of Minimal Corresponding Source or Minimal Application Code.
-For more details, see: [LICENSE](LICENSE).
+RiV-mesh is released under the **GNU Lesser General Public License v3.0 (LGPLv3)**:
+
+- **License**: LGPLv3 (standard version, no special exceptions)
+- **Commercial Use**: Allowed with full LGPLv3 compliance requirements
+- **Source Code**: Available at [GitHub](https://github.com/RiV-chain/v6Space)
+- **Compliance**: Users must provide source code and comply with LGPLv3 terms
+
+### Key LGPLv3 Requirements:
+- **Source Code Sharing**: Must provide v6Space™ source code when distributing
+- **Application Code Sharing**: Must share source code of applications using RiV-mesh
+- **Build Instructions**: Must provide installation and build information
+- **Modifications**: Any modifications to RiV-mesh must remain open source
+
+For complete licensing details, see:
+- [Full LGPLv3 License](LICENSE)
+- [v6Space™ License Information](https://rivchain.org/legal/license.html)
+- [Component Separation Guide](https://rivchain.org/legal/component-separation.html)
+
+**Note**: RiV-mesh is the legacy version. v6Space™ uses a dual-license model with additional UI components under CC BY-NC 4.0.
