@@ -152,7 +152,7 @@ RiV-mesh is released under the **GNU Lesser General Public License v3.0 (LGPLv3)
 - **Compliance**: Users must provide source code and comply with LGPLv3 terms
 
 ### Key LGPLv3 Requirements:
-- **Source Code Sharing**: Must provide v6Space™ source code when distributing
+- **Source Code Sharing**: Must provide RiV-mesh source code when distributing
 - **Application Code Sharing**: Must share source code of applications using RiV-mesh
 - **Build Instructions**: Must provide installation and build information
 - **Modifications**: Any modifications to RiV-mesh must remain open source
